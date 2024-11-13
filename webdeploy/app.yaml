@@ -1,0 +1,13 @@
+runtime: python39  # Bisa juga diubah sesuai runtime yang Anda butuhkan
+
+handlers:
+  # Handler untuk melayani file statis seperti HTML, CSS, dan gambar
+  - url: /
+    static_files: profile.html
+    upload: profile.html
+
+  - url: /(.*)
+    static_files: \1
+    upload: .*
+
+# Jika aplikasi Anda hanya berbasis HTML dan CSS, Anda tidak perlu menentukan entrypoint atau memerlukan server backend.
